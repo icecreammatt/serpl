@@ -132,7 +132,7 @@ impl Preview {
       if *replace_kind == ReplaceTextKind::DeleteLine {
         spans.push(Span::styled(
           *line,
-          Style::default().fg(Color::White).bg(Color::Red).add_modifier(Modifier::CROSSED_OUT),
+          Style::default().fg(Color::Black).bg(Color::Red).add_modifier(Modifier::CROSSED_OUT),
         ));
       } else {
         for submatch in submatches.iter().filter(|sm| sm.line_start <= line_number && line_number <= sm.line_end) {
@@ -157,13 +157,13 @@ impl Preview {
               if !search_diff.trim().is_empty() {
                 spans.push(Span::styled(
                   search_diff,
-                  Style::default().fg(Color::White).bg(Color::LightRed).add_modifier(Modifier::CROSSED_OUT),
+                  Style::default().fg(Color::Black).bg(Color::LightRed).add_modifier(Modifier::CROSSED_OUT),
                 ));
               }
 
               let replace_diff = &replacement_line[common_prefix.len()..replacement_line.len() - common_suffix.len()];
               if !replace_diff.trim().is_empty() {
-                spans.push(Span::styled(replace_diff, Style::default().fg(Color::White).bg(Color::Green)));
+                spans.push(Span::styled(replace_diff, Style::default().fg(Color::Black).bg(Color::Green)));
               }
 
               spans.push(Span::raw(common_suffix));
@@ -187,9 +187,9 @@ impl Preview {
                 let replacement = apply_replace(&matched_text[match_start..match_end], replace_text, replace_kind);
                 spans.push(Span::styled(
                   &matched_text[match_start..match_end],
-                  Style::default().fg(Color::White).bg(Color::LightRed).add_modifier(Modifier::CROSSED_OUT),
+                  Style::default().fg(Color::Black).bg(Color::LightRed).add_modifier(Modifier::CROSSED_OUT),
                 ));
-                spans.push(Span::styled(replacement, Style::default().fg(Color::White).bg(Color::Green)));
+                spans.push(Span::styled(replacement, Style::default().fg(Color::Black).bg(Color::Green)));
               }
 
               last_match_end = match_end;
@@ -371,7 +371,7 @@ impl Component for Preview {
     self.total_lines = lines.len();
     let text = Text::from(lines);
 
-    let highlight_style = Style::default().add_modifier(Modifier::BOLD).fg(Color::White);
+    let highlight_style = Style::default().add_modifier(Modifier::BOLD).fg(Color::Black);
 
     let preview_widget =
       List::new(text).highlight_style(highlight_style).block(block).highlight_symbol("> ").scroll_padding(4);
