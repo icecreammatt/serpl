@@ -213,6 +213,12 @@ impl SearchResult {
       (KeyCode::Char('k') | KeyCode::Up, _) => {
         self.previous(state);
       },
+      (KeyCode::Char('e') | KeyCode::Down, _) => {
+        self.next(state);
+      },
+      (KeyCode::Char('u') | KeyCode::Up, _) => {
+        self.previous(state);
+      },
       (KeyCode::Char('r'), _) => {
         self.replace_single_file(state);
       },
