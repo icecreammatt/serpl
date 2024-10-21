@@ -182,7 +182,7 @@ impl Preview {
               }
 
               if replace_text.is_empty() {
-                spans.push(Span::styled(&matched_text[match_start..match_end], Style::default().bg(Color::Blue)));
+                spans.push(Span::styled(&matched_text[match_start..match_end], Style::default().bg(Color::Blue).fg(Color::Black)));
               } else {
                 let replacement = apply_replace(&matched_text[match_start..match_end], replace_text, replace_kind);
                 spans.push(Span::styled(
