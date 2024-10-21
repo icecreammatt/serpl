@@ -57,7 +57,7 @@ impl Component for SmallHelp {
     let content = match state.focused_screen {
       FocusedScreen::SearchInput => "Help: <Ctrl-b> | Search: <Enter> | Toggle search mode: <Ctrl-n>",
       FocusedScreen::ReplaceInput => "Help: <Ctrl-b> | Replace: <C-o> | Toggle replace mode: <Ctrl-n>",
-      FocusedScreen::SearchResultList => "Help: <Ctrl-b> | Open File: <Enter> | Replace File: <r> | Next: <j> | Previous: <k> | Top: <g> | Bottom: <G> | Delete file: <d>",
+      FocusedScreen::SearchResultList => "Help: <Ctrl-b> | Open File: <Enter> | Replace File: <r> | Next: <e> | Previous: <u> | Top: <g> | Bottom: <G> | Delete file: <d>",
       FocusedScreen::Preview => "Help: <Ctrl-b> | Back to list: <Enter> | Replace Line: <r> | Next: <e> | Previous: <u> | Top: <g> | Bottom: <G> | Delete line: <d>",
       FocusedScreen::ConfirmReplaceDialog => "Confirm Replace: <Enter> | Cancel Replace: <Esc>, Left: <h>, Right: <l>, Loop: <Tab>",
       FocusedScreen::ConfirmGitDirectoryDialog => "Confirm Replace: <Enter> | Cancel Replace: <Esc>, Left: <h>, Right: <l>, Loop: <Tab>",
