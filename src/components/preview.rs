@@ -275,6 +275,14 @@ impl Component for Preview {
           self.previous();
           Ok(None)
         },
+        (KeyCode::Char('e') | KeyCode::Down, _) => {
+          self.next();
+          Ok(None)
+        },
+        (KeyCode::Char('u') | KeyCode::Up, _) => {
+          self.previous();
+          Ok(None)
+        },        
         (KeyCode::Char('r'), _) => {
           self.replace_selected_line(&state.selected_result);
           Ok(None)
